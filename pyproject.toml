@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "did-nostr"
+version = "0.1.0"
+description = "Reference implementation of Resolving Architecture's DID design: secp256k1/BIP-340 identities, Nostr-compatible signed records, attestations, and guardian-based key recovery."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "CC0-1.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Resolving Architecture", email = "brian@resolvingarchitecture.io" }]
+keywords = [
+    "did",
+    "did:nostr",
+    "nostr",
+    "identity",
+    "bip340",
+    "schnorr",
+    "secp256k1",
+    "attestation",
+    "social-recovery",
+    "key-rotation",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security :: Cryptography",
+]
+dependencies = [
+    "coincurve>=18",  # libsecp256k1 bindings: BIP-340 Schnorr
+    "bech32>=1.2",    # NIP-19 npub/nsec
+]
+
+[project.urls]
+Homepage = "https://github.com/resolvingarchitecture/did-python"
+Repository = "https://github.com/resolvingarchitecture/did-python"
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/did_nostr"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = "CC0-1.0"
 license-files = ["LICENSE"]
-authors = [{ name = "Resolving Architecture", email = "brian@resolvingarchitecture.io" }]
+authors = [{ name = "Resolving Architecture", email = "brian@resolvingarchitecture.dev" }]
 keywords = [
     "did",
     "did:nostr",
